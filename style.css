@@ -1,0 +1,88 @@
+html, body {
+    background-color: cornflowerblue;
+    font-family: Avenir, sans-serif;
+}
+
+h1 {
+    color: cornflowerblue;
+    margin: 0 0 20px 0;
+}
+
+#root {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.btn-block {
+    padding: 10px;
+    background-color: white;
+    border: 2px solid cornflowerblue;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-block:first-child {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-right: 0;
+}
+
+.btn-block:last-child {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 0;
+}
+
+.btn-block:hover {
+    color: white;
+    background-color: cornflowerblue;
+    margin: 0 auto;
+}
+
+.active {
+    background-color: cornflowerblue;
+    color: white;
+    box-shadow: gray 0 8px 6px -6px;
+}
+
+.select-option {
+    display: block;
+    font-size: 14px;
+    color: black;
+    width: 100%;
+    max-width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 0;
+    border: 2px solid cornflowerblue;
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 2px;
+    background-color: white;
+}
+
+@media screen and (max-width: 500px) {
+    .select-option {
+        display: block;
+    }
+
+    .btn-block {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 500px){
+    .select-option {
+        display: none;
+    }
+}
