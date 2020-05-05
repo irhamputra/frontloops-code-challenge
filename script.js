@@ -45,7 +45,31 @@ elementName.map((btnName, i) => {
 });
 
 elementName.map((option, i) => {
-  return root.appendChild(select).appendChild(createOptions(option, i));
+  return root
+    .appendChild(select)
+    .appendChild(createOptions(option, i))
+    .addEventListener("click", () => {
+      const btn1 = document.getElementById(`btn-1`);
+      const btn2 = document.getElementById(`btn-2`);
+      const btn3 = document.getElementById(`btn-3`);
+
+      if (i + 1 === 1) {
+        btn1.setAttribute("class", "btn-block active");
+
+        btn2.setAttribute("class", "btn-block");
+        btn3.setAttribute("class", "btn-block");
+      } else if (i + 1 === 2) {
+        btn2.setAttribute("class", "btn-block active");
+
+        btn1.setAttribute("class", "btn-block");
+        btn3.setAttribute("class", "btn-block");
+      } else if (i + 1 === 3) {
+        btn3.setAttribute("class", "btn-block active");
+
+        btn1.setAttribute("class", "btn-block");
+        btn2.setAttribute("class", "btn-block");
+      }
+    });
 });
 
 function createButton(name, id) {
@@ -53,13 +77,14 @@ function createButton(name, id) {
   btn.setAttribute("class", "btn-block");
   btn.setAttribute("id", `btn-${id + 1}`);
   btn.textContent = name;
+  btn.value = name.replace("Sort by ", "");
   return btn;
 }
 
 function createOptions(name, id) {
   let option = document.createElement("option");
   option.textContent = name;
-  option.value = name;
+  option.value = name.replace("Sort by ", "");
   option.setAttribute("id", `option_${id + 1}`);
   return option;
 }
